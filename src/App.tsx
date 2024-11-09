@@ -11,6 +11,8 @@ function App() {
   return (
     <>
       <button onClick={add}>+</button>
+      <h1>{count}</h1>
+      
     </>
   )
 }

@@ -21,14 +21,29 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
+
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - run: npm ci
-      - run: npm run build --if-present
-      - name: welcome to actions
-        run: |
-          echo "Welcome to actions -1"
-          echo "Welcome to actions -2"
-          echo "Welcome to actions -3"
+      - name: checkout code
+
+        run: npm i
+
+      - name: run ESLINT
+        run:
+          npm run list
+
+
+          
+          # ci es igual que npm i , ci es mas rapido pero necesitas el package-lock
+      # - run: npm ci
+      # - run: npm run build --if-present
+
+      # - name: welcome to actions
+      #   run: |
+      #     echo "Welcome to actions -1"
+      #     echo "Welcome to actions -2"
+      #     echo "Welcome to actions -3"
+      # - name: creating build with new
+      #   run:
